@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 // import axios from 'axios';
 import GalleryItem from '../GalleryItem/GalleryItem';
-
+import GalleryListFunction from '../GalleryList/GalleryList';
 import {useState} from "react";
 
 
@@ -24,6 +24,7 @@ function App() {
         <p>This is my Gallery</p>
 
         <GalleryItem />
+        <GalleryListFunction />
 
         {/* <img src="images/goat_small.jpg"/> */}
         {/* <img src="images/car.jpg"/>
@@ -32,7 +33,7 @@ function App() {
         <img src="images/internet.jpg"/>
         <img src="images/movies.jpg"/>
         <img src="images/music.jpg"/>
-        <img src="images/pizza.jpg"/>
+        <img src="images/food.jpg"/>
         <img src="images/running.jpg"/>
         <img src="images/streaming.jpg"/>
         <img src="images/travel.jpg"/> */}
