@@ -4,7 +4,7 @@ import './App.css';
 import GalleryItem from '../GalleryItem/GalleryItem';
 import GalleryListFunction from '../GalleryList/GalleryList';
 import {useState} from "react";
-
+import Header from './Header/Header';
 
 
 
@@ -25,7 +25,10 @@ function App() {
 
         <GalleryItem />
         <GalleryListFunction />
-
+        <Header 
+        taco= 'yes'
+        title= 'Hello World!'
+        />
         {/* <img src="images/goat_small.jpg"/> */}
         {/* <img src="images/car.jpg"/>
         <img src="images/coffee.jpg"/>
