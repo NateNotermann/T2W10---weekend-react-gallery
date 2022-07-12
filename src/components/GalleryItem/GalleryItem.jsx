@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from "react";
+import { useState } from 'react';
 
 
 
@@ -12,10 +12,13 @@ import { useState } from "react";
 //     console.log('liked', likes, 'times');
 // }
 
-function GalleryItem(
+function GalleryItem({
     //galleryItem
-    {galleryItem}
-) {
+    galleryItem
+}) {
+
+    const [isInImageMode, setIsInImageMode] = useState(true);
+
     const [likes, setLikes] = useState(0); // MUST be in FUNCTION
 
     const LikeButton = () => {
@@ -24,7 +27,7 @@ function GalleryItem(
     }
     const UnLikeButton = () => {
         setLikes(likes -1);
-        console.log(likes)
+        console.log(likes) 
     }
     const ResetLikeButton = () => {
         setLikes(0);
@@ -32,7 +35,7 @@ function GalleryItem(
     }    
 
 
-    console.log('galleryItem is:', galleryItem, galleryItem.id)
+    console.log('galleryItem is:', galleryItem,)
     return (
         <>
 
@@ -41,12 +44,24 @@ function GalleryItem(
                 {/* <br></br> */}
             <li>
                 <div>
-                    <h3>{galleryItem.link} </h3>
+                    <div onClick={() => setIsInImageMode(!isInImageMode)}>
+                    {isInImageMode ?
+                    <h3>isInImageMode</h3>
+                    :
+                    <h3>NOT isInImageMode</h3>
+                    }</div>
+
+                    {/* THESE THREE LINES BREAK THE APP */}    
                     <img src={galleryItem.link} />
+                    <div>{galleryItem.description}</div>
+                    <div>REAL number of Likes: {galleryItem.likes}</div>
+                    {/* THESE THREE LINES BREAK THE APP */}  
+
                     <button onClick={LikeButton}>LIKE</button>
                     <button onClick={UnLikeButton}>UNLIKE</button>
                     <button onClick={ResetLikeButton}>RESET</button>
                     <h3># of Likes:{likes}</h3>
+                    {/* {/ TODO No people like this, if 0 likes  */}
                 </div>
              </li>
             {/* </div> */}
