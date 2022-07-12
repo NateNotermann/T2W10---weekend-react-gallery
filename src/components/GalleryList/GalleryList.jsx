@@ -3,27 +3,38 @@ import {useState } from 'react';
 function GalleryListFunction (){
 
     const [GalleryList, setGalleryList] = useState ([
-        {thing: 'biking',
+        {id: '1',
+        thing: 'biking',
         link: 'images/biking.jpg'},
-        {thing: 'car',
+        {id: '2',
+        thing: 'car',
         link: 'images/car.jpg'},
-        {thing: 'coffee',
+        {id: '3',
+        thing: 'coffee',
         link: 'images/coffee.jpg'},
-        {thing: 'friends',
+        {id: '4',
+        thing: 'friends',
         link: 'images/friends.jpg'},
-        {thing: 'internet',
+        {id: '5',
+        thing: 'internet',
         link: 'images/internet.jpg'},
-        {thing: 'movies',
+        {id: '6',
+        thing: 'movies',
         link: 'images/movies.jpg'},
-        {thing: 'music',
+        {id: '7',
+        thing: 'music',
         link: 'images/music.jpg'},
-        {thing: 'food',
+        {id: '8',
+        thing: 'food',
         link: 'images/food.jpg'},
-        {thing: 'running', 
+        {id: '9',
+        thing: 'running', 
         link: 'images/running.jpg'},
-        {thing: 'streaming',
+        {id: '10',
+        thing: 'streaming',
         link: 'images/streaming.jpg'},
-        {thing: 'travel',
+        {id: '11',
+        thing: 'travel',
         link: 'images/travel.jpg'},
     ]);
 
@@ -36,7 +47,7 @@ function GalleryListFunction (){
             {/* <p>{GalleryObjects[0].thing} is thing, picture:{GalleryObjects[0].link}</p>  */}
             {
                 GalleryList.map((items) => {
-                    return <li key={items.name}>{items.thing}'s pic is here: {items.link}</li>;                     
+                    return <li key={items.id}>{items.thing}'s pic is here: {items.link}</li>;                     
                    
                 })
             }
