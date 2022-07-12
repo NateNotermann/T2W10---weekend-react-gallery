@@ -12,7 +12,10 @@ import { useState } from "react";
 //     console.log('liked', likes, 'times');
 // }
 
-function GalleryItem() {
+function GalleryItem(
+    //galleryItem
+    {galleryItem}
+) {
     const [likes, setLikes] = useState(0); // MUST be in FUNCTION
 
     const LikeButton = () => {
@@ -27,18 +30,26 @@ function GalleryItem() {
         setLikes(0);
         console.log(likes)
     }    
+
+
+    console.log('galleryItem is:', galleryItem, galleryItem.id)
     return (
         <>
 
-            <div id="item">
-                <img src="images/biking.jpg" />
-                <br></br>
-                <button onClick={LikeButton}>LIKE</button>
-                <button onClick={UnLikeButton}>UNLIKE</button>
-                <button onClick={ResetLikeButton}>RESET</button>
-                <h3># of Likes:{likes}</h3>
-
-            </div>
+            {/* <div id="item"> */}
+                {/* <img src="images/biking.jpg" /> */}
+                {/* <br></br> */}
+            <li>
+                <div>
+                    <h3>{galleryItem.link} </h3>
+                    <img src={galleryItem.link} />
+                    <button onClick={LikeButton}>LIKE</button>
+                    <button onClick={UnLikeButton}>UNLIKE</button>
+                    <button onClick={ResetLikeButton}>RESET</button>
+                    <h3># of Likes:{likes}</h3>
+                </div>
+             </li>
+            {/* </div> */}
               
 
         </>

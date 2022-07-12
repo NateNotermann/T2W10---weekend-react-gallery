@@ -48,7 +48,7 @@ console.log('gallery list is:', galleryList );
         </header>
         <p>This is my Gallery</p>
 
-        <GalleryItem />
+        {/* <GalleryItem /> */}
    
         {/* // send array of images to GalleryList COMPONENT
         //Loop through array and redner each one as a GalleryItem
@@ -57,7 +57,8 @@ console.log('gallery list is:', galleryList );
         <GalleryListFunction 
         galleryListPropLeft={galleryList}
         // Whatever is on the LEFT side of the prop
-            // Will have to go into the FUNCTION(galleryListPropLeft) in the corresponding component  
+            // Will have to go into the FUNCTION(galleryListPropLeft) 
+            //in the corresponding component  
         // galleryListPropLeft is a TACO
         // {galleryList} is NOT a taco. IT is being pull from the useState above in .App  
         />
