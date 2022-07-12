@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 // import axios from 'axios';
 import GalleryItem from '../GalleryItem/GalleryItem';
 import GalleryListFunction from '../GalleryList/GalleryList';
 import {useState} from "react";
 import Header from './Header/Header';
-
+import axios from 'axios';
 
 
 
@@ -13,6 +13,25 @@ import Header from './Header/Header';
 
 function App() {
 
+  const [galleryList, setGalleryList] =useState([]);
+
+useEffect(() => {
+  fetchGalleryList();
+    console.log('handshake test fetchGallery');
+}, [] );
+
+const fetchGalleryList = () => {
+  axios.get('gallery')
+  .then((response) => {
+    console.log('IN get /gallery');
+    setGalleryList(response.data);
+  })
+  .catch((err) => {
+    console.log('ERROR in AXIOS GET(APP.JSX')
+  });
+};
+
+console.log('gallery list is:', galleryList );
 
     return (
       //empty element is called a "Fragment"
