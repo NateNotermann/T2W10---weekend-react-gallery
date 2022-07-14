@@ -6,8 +6,11 @@ function GalleryListFunction ({
     // must be same name as left SIDE of PROP from App.jsx
 }) {
     console.log('SENDING PROP to GalleryListFunction', galleryListPropLeft)// this console.log/handshake works
+    const [galleryItem, setGalleryItem] = useState('');
 
-
+    function pleaseSetGalleryItem () {
+        setGalleryItem(galleryListPropLeft)    
+    }
 
     return (
         <>
@@ -37,11 +40,11 @@ function GalleryListFunction ({
 
 
         </div>
-            <GalleryItem 
+            {/* <GalleryItem 
             galleryItem={galleryListPropLeft[0]
             
             }
-            />
+            /> */}
            
             {/* <GalleryItem 
             galleryItem={galleryListPropLeft[1]}

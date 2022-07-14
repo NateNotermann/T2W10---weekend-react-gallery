@@ -21,6 +21,8 @@ function GalleryItem({
 
     const [likes, setLikes] = useState(0); // MUST be in FUNCTION
 
+    const [galleryPic, setGalleryPic] = useState('');
+
     const LikeButton = () => {
         setLikes(likes +1);
         console.log(likes)
@@ -34,7 +36,9 @@ function GalleryItem({
         console.log(likes)
     }    
 
-
+function imageCL (){
+    console.log('IMAGE CLICKED!');
+}
     console.log('galleryItem is:', galleryItem,)
     return (
         <>
@@ -44,16 +48,20 @@ function GalleryItem({
                 {/* <br></br> */}
             <li>
                 <div>
-                    <div onClick={() => setIsInImageMode(!isInImageMode)}>
+                    <div 
+                    onClick={() => setIsInImageMode(!isInImageMode)}>
                     {isInImageMode ?
+                    <div>
                     <h3>isInImageMode</h3>
+                    <img src={galleryItem.link} onClick={imageCL} />
+                    </div>
                     :
-                    <h3>NOT isInImageMode</h3>
+                    <div className="notImage">{galleryItem.description}</div>
                     }</div>
 
                     {/* THESE THREE LINES BREAK THE APP */}    
-                    <img src={galleryItem.link} />
-                    <div>{galleryItem.description}</div>
+                    {/* <img src={galleryItem.link} /> */}
+                    {/* <div>{galleryItem.description}</div> */}
                     <div>REAL number of Likes: {galleryItem.likes}</div>
                     {/* THESE THREE LINES BREAK THE APP */}  
 
