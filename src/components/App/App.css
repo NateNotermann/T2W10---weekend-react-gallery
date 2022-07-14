@@ -20,3 +20,20 @@ img {
   padding: 10px;
 }
 
+
+.notImage {
+  text-align: center;
+  width: 150px;
+  padding: 10px;
+}
+
+#notImage {
+  text-align: center;
+  width: 150px;
+  padding: 10px;
+}
+
+
+
+h3 {  text-align: center;
+}
